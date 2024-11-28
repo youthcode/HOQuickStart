@@ -1,6 +1,20 @@
 {
   "app": {
-    "signingConfigs": [],
+    "signingConfigs": [
+      {
+        "name": "default",
+        "type": "HarmonyOS",
+        "material": {
+          "certpath": "/Users/wangyupeng/.ohos/config/default_QuickStart_QHZ4AooqYlqrT-rfgHsw93gjvdJjNV7YRSqVxC2EH-k=.cer",
+          "storePassword": "0000001932E2F6E85FAF6DBAA70F733374E9B224EFF7F08A6CCF8C7FF3E8D9F7DCB8CC0D00EACF0F44",
+          "keyAlias": "debugKey",
+          "keyPassword": "000000192DAF7829B5187E17254619615F64B4E93B319056638156EAEEE2DF15E352FDE57A10AE3DB6",
+          "profile": "/Users/wangyupeng/.ohos/config/default_QuickStart_QHZ4AooqYlqrT-rfgHsw93gjvdJjNV7YRSqVxC2EH-k=.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "/Users/wangyupeng/.ohos/config/default_QuickStart_QHZ4AooqYlqrT-rfgHsw93gjvdJjNV7YRSqVxC2EH-k=.p12"
+        }
+      }
+    ],
     "products": [
       {
         "name": "default",
@@ -26,8 +40,8 @@
   },
   "modules": [
     {
-      "name": "entry",
-      "srcPath": "./entry",
+      "name": "default",
+      "srcPath": "./products/default",
       "targets": [
         {
           "name": "default",
@@ -36,6 +50,26 @@
           ]
         }
       ]
+    },
+    {
+      "name": "quickstart",
+      "srcPath": "./features/quickstart",
+    },
+    {
+      "name": "map",
+      "srcPath": "./features/map",
+    },
+    {
+      "name": "learning",
+      "srcPath": "./features/learning",
+    },
+    {
+      "name": "utils",
+      "srcPath": "./commons/utils",
+    },
+    {
+      "name": "uicomponents",
+      "srcPath": "./commons/uicomponents",
     }
   ]
 }
