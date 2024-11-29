@@ -1,5 +1,5 @@
 {
-  "name": "map",
+  "name": "@yc/map",
   "version": "1.0.0",
   "description": "Please describe the basic information.",
   "main": "Index.ets",

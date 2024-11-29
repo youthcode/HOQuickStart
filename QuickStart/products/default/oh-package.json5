@@ -6,8 +6,8 @@
   "author": "",
   "license": "",
   "dependencies": {
-    "learning": "file:../../features/learning",
-    "map": "file:../../features/map",
+    "@yc/learning": "file:../../features/learning",
+    "@yc/map": "file:../../features/map",
     "@yc/quickstart": "file:../../features/quickstart"
   }
 }
