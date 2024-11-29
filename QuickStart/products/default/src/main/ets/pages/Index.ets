@@ -9,8 +9,8 @@ struct Index {
     Column() {
     //   QuickStartPage()
     //   CourseLearning()
-    //   KnowledgeMap()
-      KnowledgeMapContent()
+      KnowledgeMap()
+    //   KnowledgeMapContent()
     }
     .backgroundColor('#F1F3F5')
     .padding({ top: 36, bottom: 28 })
