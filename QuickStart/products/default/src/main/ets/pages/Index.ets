@@ -1,6 +1,6 @@
 import { QuickStartPage }  from '@yc/quickstart';
 import { CourseLearning } from '@yc/learning';
-import { KnowledgeMap } from '@yc/map';
+import { KnowledgeMap, KnowledgeMapContent } from '@yc/map';
 
 @Entry
 @Component
@@ -9,7 +9,8 @@ struct Index {
     Column() {
     //   QuickStartPage()
     //   CourseLearning()
-      KnowledgeMap()
+    //   KnowledgeMap()
+      KnowledgeMapContent()
     }
     .backgroundColor('#F1F3F5')
     .padding({ top: 36, bottom: 28 })
