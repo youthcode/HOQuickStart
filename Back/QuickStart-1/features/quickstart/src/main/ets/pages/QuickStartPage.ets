@@ -5,6 +5,7 @@ import { EnablementView } from '../view/EnablementView';
 import { ArticleClass } from '../model/ArticleClass';
 import { BannerClass } from '../model/BannerClass';
 import { ArticleDetailPage } from './ArticleDetailPage';
+import { BannerDetailPage } from './BannerDetailPage';
 
 @Component
 export struct QuickStartPage {
@@ -15,6 +16,8 @@ export struct QuickStartPage {
   quickStartRouter(name: string, param?: ArticleClass | BannerClass) {
     if (name === 'articleDetail') {
       ArticleDetailPage()
+    } else if (name === 'bannerDetailPage') {
+      BannerDetailPage()
     }
   }
 
