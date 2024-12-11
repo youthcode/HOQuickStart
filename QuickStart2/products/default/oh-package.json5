@@ -6,6 +6,7 @@
   "author": "",
   "license": "",
   "dependencies": {
-    "@ohos/quickstart": "file:../../features/quickstart"
+    "@ohos/quickstart": "file:../../features/quickstart",
+    "@ohos/learning": "file:../../features/learning"
   }
 }
