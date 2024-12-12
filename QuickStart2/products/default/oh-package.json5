@@ -7,6 +7,7 @@
   "license": "",
   "dependencies": {
     "@ohos/quickstart": "file:../../features/quickstart",
-    "@ohos/learning": "file:../../features/learning"
+    "@ohos/learning": "file:../../features/learning",
+    "@ohos/map": "file:../../features/map"
   }
 }
