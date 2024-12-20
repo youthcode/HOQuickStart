@@ -14,6 +14,13 @@ export interface Section {
   materials: Material[]
 }
 
+const TypeMapIcon: Record<string, string> = {
+  '指南': 'app.media.ic_guide',
+  '准备': 'app.media.ic_prepare',
+  '学习与获取证书': 'app.media.ic_medals',
+  '视频教程': 'app.media.ic_video',
+}
+
 @Component
 export struct KnowledgeMapContent {
   @State  section: Section = {
@@ -43,6 +50,55 @@ export struct KnowledgeMapContent {
     ]
   };
 
+  @Builder
+  KnowledgeBlockLine(knowledgeBaseItem: KnowledgeBaseItem) {
+    Row() {
+      Image($r(TypeMapIcon[knowledgeBaseItem.type]))
+        .width(20)
+        .height(20)
+      Column() {
+        Text(knowledgeBaseItem.title)
+          .fontFamily('HarmonyHeiTi-Medium')
+          .fontSize(16)
+          .fontWeight(500)
+        Text(knowledgeBaseItem.type)
+          .fontFamily('HarmonyHeiTi')
+          .fontSize(14)
+          .fontWeight(400)
+      }
+      .alignItems(HorizontalAlign.Start)
+      .margin({ left: 18 })
+      Blank()
+      Image($r('app.media.ic_arrow'))
+        .width(12)
+        .height(24)
+    }
+    .width('100%')
+    .height(64)
+    .alignItems(VerticalAlign.Center)
+  }
+
+  @Builder
+  KnowledgeBlock(material: Material) {
+    Column() {
+      Text(material.subtitle)
+        .fontFamily('HarmonyHeiTi-Medium')
+        .fontSize(14)
+        .fontWeight(500)
+        .margin({ bottom: 8 })
+      List({ space: 12 }) {
+        ForEach(material.knowledgeBase, (item: KnowledgeBaseItem, index: number) => {
+          ListItem() {
+            this.KnowledgeBlockLine(item)
+          }
+        }, (item: KnowledgeBaseItem, index: number) => item.title)
+      }
+    }
+    .width('100%')
+    .margin({ top: 28 })
+    .alignItems(HorizontalAlign.Start)
+  }
+
   build() {
     Column() {
       Text(this.section?.title)
@@ -57,6 +113,9 @@ export struct KnowledgeMapContent {
         .textAlign(TextAlign.JUSTIFY)
         .fontWeight(400)
         .margin({ top: 12 })
+      ForEach(this.section?.materials, (material: Material) => {
+        this.KnowledgeBlock(material)
+      },(material: Material, index: number) => material.subtitle)
     }
     .alignItems(HorizontalAlign.Start)
     .padding({ top: 12, left: 16, bottom: 12, right: 16 })
